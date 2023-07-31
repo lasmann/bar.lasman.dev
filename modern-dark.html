@@ -1,0 +1,222 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" rel="stylesheet">
+		<script defer src="js/main.js"></script>
+		<script defer src="js/Tocca.min.js"></script>
+
+		<link rel="icon" type="image/x-icon" href="favicon.ico">   
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Montserrat:ital,wght@0,400;0,800;1,400&display=swap" rel="stylesheet">
+
+		<title>Cocktail Menu</title>
+		<meta name="theme-color" content="#222222">
+		<meta name="description" content="Cocktail menu project. Get the code, tweak the settings, add recipies and you're good to go!">
+
+    <style>
+
+      /*  
+
+          Change color settings here by changing hex codes. 
+          Preview the changes by clicking on "html" in DevTools and going to ":root" in styles. 
+          Replace hex-code with "0" to disable the setting (ex. to disable text-shadow-color). 
+
+      */
+
+      :root {
+        /*----- Main background and text color -----*/
+        --main-bg-color: #222;
+        --main-text-color: #fff;
+
+        /*----- Card and section background color -----*/
+        --card-bg-color: #373737;
+        --section-bg-color: #ffffff;
+
+        /*----- Subdued text color -----*/
+        --subdued-text-color: #7a7a7a;
+
+        /*----- Heading text shadow -----*/
+        --text-shadow: 0px 10px 30px #000;
+
+        /*----- Neon sign color -----*/
+        --neon-sign-color: #c8851c;
+
+        /*----- Font families -----*/
+        --heading-font: 'Montserrat', sans-serif;
+        --body-font: 'Courier Prime', monospace;
+
+        /*----- Quickly adjust font-size throughout the site -----*/
+        --base-font-size: 10px;
+
+        /*----- Adjusts body font size -----*/
+        --body-font-size: 1.6rem;
+
+        /*----- Some fonts have issues with line-height. Try different margin-bottoms -----*/
+        --heading-margin-bottom: 3rem;
+        --heading-margin-top: 2rem;
+        --heading-font-line-height: 1.4;
+
+        /*----- Section border -----*/
+        /* --section-border: 3px solid #222; */
+
+        /*----- Card icon width relative to the card -----*/
+        --card-icon-width: 20%;   
+      }
+
+    </style>
+	</head> 
+
+	<body>
+		<section class="menu-slider">
+			<p class="subtitle center">- What are we drinking today?</p>
+
+      <!-- 
+        Class options: 
+          center - centers text
+          desktop-center - centers text on desktop only
+          mobile-center - centers text on mobile only
+          text-shadow - adds a text shadow
+          neon - adds pulsating neon sign-like effect
+          neon-on-tap - enable neon sign-like effect on double-tap
+      -->
+			<h1 class="center text-shadow neon-on-tap">
+				Tonight's picks
+			</h1>
+
+			<p class="description desktop-center">A special selection of cocktails that we're serving today.</p>
+
+      <!-- 
+        Class options: 
+          vertical - switches to stacked card layout
+          icons - adjusts image sizes to fit icons
+          card-shadow - adds shadow to cards
+          invert - inverts image color
+      -->
+			<div class="slider-wrapper vertical icons invert card-shadow">
+				<div class="card">
+					<img src="img/coupe-glass.png" class="card__image">
+					<p class="card__name">Earl Gray MarTEAni</p>
+					<p class="card__recipe">Earl Gray infused Gin, Lemon juice, Egg white, Sugar rim</p>
+					<p class="card__formula">
+            1.5 oz Infused Gin 
+            0.75 oz Lemon juice
+            1 Egg white
+            1 oz Simple
+          </p>
+				</div>
+
+				<div class="card">
+					<img src="img/old-fashioned-glass.png" class="card__image">
+					<p class="card__name">Mai Tai</p>
+					<p class="card__recipe">Rum, Lime juice, Orgeat, Orange liqueur, Sugar</p>
+					<p class="card__formula">
+            2 oz Rum 
+            1 oz Lime juice
+            0.75 oz Orgeat
+            0.5 oz Curacao 
+            0.25 oz Simple
+          </p>
+				</div>
+
+        <div class="card">
+					<img src="img/coupe-glass.png" class="card__image">
+					<p class="card__name">Earl Gray MarTEAni</p>
+					<p class="card__recipe">Earl Gray infused Gin, Lemon juice, Egg white, Sugar rim</p>
+					<p class="card__formula">
+            1.5 oz Infused Gin 
+            0.75 oz Lemon juice
+            1 Egg white
+            1 oz Simple
+          </p>
+				</div>
+
+				<div class="card">
+					<img src="img/old-fashioned-glass.png" class="card__image">
+					<p class="card__name">Brandy Peach B*tch</p>
+					<p class="card__recipe">Brandy, Lemon juice, Peach juice, Orgeat, Bitters</p>
+					<p class="card__formula">
+            1.5 oz Brandy 
+            2 oz Peach juice
+            1 oz Lemon juice
+            0.5 oz Orgeat
+            0.5 oz Amaro di Angostura 
+            0.25 oz Simple
+          </p>
+				</div>
+			</div>
+		</section>	
+
+		
+
+		<section class="menu-slider">
+			<p class="subtitle center">- Can't decide?</p>
+
+			<h1 class="center text-shadow neon-on-tap">
+				Guest Favorites
+			</h1>
+
+			<p class="description desktop-center">Here are our guest favorites. Can't go wrong with those.</p>
+
+			<!-- Add the class "vertical" to the div below to switch to a stacked layout. -->
+			<div class="slider-wrapper icons invert card-shadow">
+				<div class="card">
+					<img src="img/coupe-glass.png" class="card__image">
+					<p class="card__name">Earl Gray MarTEAni</p>
+					<p class="card__recipe">Earl Gray infused Gin, Lemon juice, Egg white, Sugar rim</p>
+					<p class="card__formula">
+            1.5 oz Infused Gin 
+            0.75 oz Lemon juice
+            1 Egg white
+            1 oz Simple
+          </p>
+				</div>
+
+				<div class="card">
+					<img src="img/old-fashioned-glass.png" class="card__image">
+					<p class="card__name">Mai Tai</p>
+					<p class="card__recipe">Rum, Lime juice, Orgeat, Orange liqueur, Sugar</p>
+					<p class="card__formula">
+            2 oz Rum 
+            1 oz Lime juice
+            0.75 oz Orgeat
+            0.5 oz Curacao 
+            0.25 oz Simple
+          </p>
+				</div>
+
+        <div class="card">
+					<img src="img/coupe-glass.png" class="card__image">
+					<p class="card__name">Earl Gray MarTEAni</p>
+					<p class="card__recipe">Earl Gray infused Gin, Lemon juice, Egg white, Sugar rim</p>
+					<p class="card__formula">
+            1.5 oz Infused Gin 
+            0.75 oz Lemon juice
+            1 Egg white
+            1 oz Simple
+          </p>
+				</div>
+
+				<div class="card">
+					<img src="img/old-fashioned-glass.png" class="card__image">
+					<p class="card__name">Brandy Peach B*tch</p>
+					<p class="card__recipe">Brandy, Lemon juice, Peach juice, Orgeat, Bitters</p>
+					<p class="card__formula">
+            1.5 oz Brandy 
+            2 oz Peach juice
+            1 oz Lemon juice
+            0.5 oz Orgeat
+            0.5 oz Amaro di Angostura 
+            0.25 oz Simple
+          </p>
+				</div>
+			</div>
+		</section>	
+
+	</body> 
+</html>
