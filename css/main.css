@@ -269,7 +269,8 @@ section:last-child {
 
 	display: flex;
 	flex-direction: column;
-  justify-content: center;
+  text-align: center;
+  align-items: center;
 	width: 250px;
 	min-width: 250px;
 
