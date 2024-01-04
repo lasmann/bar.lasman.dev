@@ -363,6 +363,12 @@ section:last-child {
   margin: 0;
 }
 
+@media screen and (max-width: 1024px) {
+  .card-shadow.slider-wrapper:not(.vertical) {
+    padding-inline: 0;
+  }
+}
+
 .card-shadow.slider-wrapper .card {
   box-shadow: 5px 5px 15px #0000000f;
   padding: 2rem;
