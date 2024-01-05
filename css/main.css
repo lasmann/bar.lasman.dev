@@ -161,6 +161,34 @@ body {
 	margin: 0 auto;
 }
 
+nav {
+  position: fixed;
+  bottom: 0;
+  z-index: 9;
+  padding: 1.5rem 2rem 2rem;
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+
+  display: flex;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+}
+
+nav div {
+  width: 100%;
+}
+
+nav span {
+  padding: 0 10px;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 5px;
+}
+
 p {
 	margin-bottom: 1rem;
 }
