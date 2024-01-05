@@ -177,11 +177,6 @@ nav {
   scroll-snap-type: x mandatory;
 }
 
-nav div {
-  width: 100%;
-  scroll-snap-align: start;
-}
-
 nav span {
   padding: 0 10px;
 }
