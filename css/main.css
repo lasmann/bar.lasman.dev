@@ -186,11 +186,13 @@ nav a:last-child {
 }
 
 nav a {
-  padding: 0 10px;
+  padding: 0 15px;
+  color: #ffffff7a;
 }
 
 nav a.active {
-  text-decoration: none
+  text-decoration: none;
+  color: #ffffff;
 }
 
 a {
@@ -221,7 +223,7 @@ section:first-child {
 }
 
 section:last-child {
-	padding-bottom: 6rem;
+	padding-bottom: 8rem;
 }
 
 

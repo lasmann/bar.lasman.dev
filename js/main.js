@@ -82,7 +82,7 @@ let isTouching = false;
 let scrollTimeout;
 
 function changeLinkState() {
-  const middleOfViewport = window.innerHeight / 2; // Middle of the viewport
+  const middleOfViewport = (window.innerHeight / 2) - 30; // Middle of the viewport
 
   sections.forEach((section, index) => {
     const sectionTop = section.offsetTop - middleOfViewport;
@@ -93,27 +93,21 @@ function changeLinkState() {
     if (window.scrollY >= sectionTop && window.scrollY < sectionBottom && !isLinkActive && !isTouching) {
       navLinks.forEach((link) => link.classList.remove('active'));
       navLinks[index].classList.add('active');
+
+      // Scroll the active link to the middle of the screen horizontally
+      navLinks[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
   });
-}
-
-function scrollToActiveLink() {
-  const activeLink = document.querySelector('nav a.active');
-  if (activeLink) {
-    activeLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
 }
 
 function delayedChange() {
   clearTimeout(scrollTimeout);
   scrollTimeout = setTimeout(() => {
     changeLinkState();
-    scrollToActiveLink();
   }, 150); // Adjust the delay time as needed (e.g., 150ms)
 }
 
 changeLinkState(); // Call initially to set active link on page load
-scrollToActiveLink(); // Scroll to the active link on page load
 
 window.addEventListener('scroll', () => {
   clearTimeout(scrollTimeout);
@@ -123,12 +117,10 @@ window.addEventListener('scroll', () => {
 // Set flag for touch events
 window.addEventListener('touchstart', () => {
   isTouching = true;
-  console.log('true');
 });
 
 window.addEventListener('touchend', () => {
   isTouching = false;
-  console.log('false');
 });
 
 
