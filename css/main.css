@@ -172,6 +172,8 @@ nav {
   backdrop-filter: blur(20px);
   scroll-snap-type: x mandatory;
 
+  color: #ffffff7a;
+
   display: flex;
   overflow: auto;
   scroll-snap-type: x mandatory;
@@ -187,7 +189,6 @@ nav a:last-child {
 
 nav a {
   padding: 0 15px;
-  color: #ffffff7a;
 }
 
 nav a.active {
@@ -349,6 +350,7 @@ section:last-child {
 
 .slider-wrapper .card p {
   white-space: pre-line;
+  line-height: 25px;
 }
 
 .card__name {
