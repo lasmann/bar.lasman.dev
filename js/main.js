@@ -95,7 +95,7 @@ function changeLinkState() {
         canSetActive = false;
         setTimeout(() => {
           canSetActive = true;
-        }, 50); // Prevent setting "active" for 500ms
+        }, 200); // Prevent setting "active" for 500ms
       }
     }
   });
