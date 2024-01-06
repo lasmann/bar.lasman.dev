@@ -97,7 +97,7 @@ function scrollToActiveLink() {
   const activeLink = document.querySelector('nav a.active');
   if (activeLink) {
     setTimeout(function(){
-      activeLink.scrollIntoView({ behavior: 'instant', block: 'center' });
+      activeLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 10)
     
   }
