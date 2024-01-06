@@ -109,7 +109,7 @@ function delayedChange() {
   scrollTimeout = setTimeout(() => {
     changeLinkState();
     scrollToActiveLink();
-  }, 100); // Adjust the delay time as needed (e.g., 150ms)
+  }, 150); // Adjust the delay time as needed (e.g., 150ms)
 }
 
 changeLinkState(); // Call initially to set active link on page load
