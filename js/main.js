@@ -78,6 +78,8 @@ neonsigns.forEach(sign => {
 
 const navLinks = document.querySelectorAll('nav a');
 const sections = document.querySelectorAll('section');
+let isTouching = false;
+let scrollTimeout;
 
 function changeLinkState() {
   const middleOfViewport = window.innerHeight / 2; // Middle of the viewport
@@ -88,7 +90,7 @@ function changeLinkState() {
 
     const isLinkActive = navLinks[index].classList.contains('active');
 
-    if (window.scrollY >= sectionTop && window.scrollY < sectionBottom && !isLinkActive) {
+    if (window.scrollY >= sectionTop && window.scrollY < sectionBottom && !isLinkActive && !isTouching) {
       navLinks.forEach((link) => link.classList.remove('active'));
       navLinks[index].classList.add('active');
     }
@@ -102,13 +104,33 @@ function scrollToActiveLink() {
   }
 }
 
+function delayedChange() {
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    changeLinkState();
+    scrollToActiveLink();
+  }, 150); // Adjust the delay time as needed (e.g., 150ms)
+}
+
 changeLinkState(); // Call initially to set active link on page load
 scrollToActiveLink(); // Scroll to the active link on page load
 
 window.addEventListener('scroll', () => {
-  changeLinkState();
-  scrollToActiveLink(); // Scroll to the active link on scroll
+  clearTimeout(scrollTimeout);
+  delayedChange();
 });
+
+// Set flag for touch events
+window.addEventListener('touchstart', () => {
+  isTouching = true;
+  console.log('true');
+});
+
+window.addEventListener('touchend', () => {
+  isTouching = false;
+  console.log('false');
+});
+
 
 
 
