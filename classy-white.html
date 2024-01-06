@@ -59,9 +59,26 @@
 
         /* --section-border: 3px solid #222;  */
 
-        --card-icon-width: 20%;
+        --card-icon-width: 50%;
       }
       
+
+      nav {
+        background: white;
+        box-shadow: 0px -5px 19px #00000026;
+        z-index: 999999999;
+        -webkit-backdrop-filter: unset;
+        backdrop-filter: unset;
+        color: #00000042;
+      }
+
+      nav a.active {
+        font-weight: 600;
+      }
+
+      .palette color {
+        border: 2px solid black;
+      }
   
     </style>
 	</head> 
@@ -98,7 +115,7 @@
           neon - adds pulsating neon sign-like effect
           neon-on-tap - enable neon sign-like effect on double-tap
       -->
-			<h1 class="center text-shadow neon-on-load">
+			<h1 class="center text-shadow neon-on-tap">
 				Tonight's picks
 			</h1>
 
@@ -109,9 +126,9 @@
           vertical - switches to stacked card layout
           icons - adjusts image sizes to fit icons
           card-shadow - adds shadow to cards
-          invert - inverts image color
+          - inverts image color
       -->
-			<div class="slider-wrapper vertical icons invert card-shadow center">
+			<div class="slider-wrapper vertical icons card-shadow center">
 
         <div class="card">
 					<img src="img/coupe.webp" class="card__image">
@@ -248,7 +265,7 @@
 		<section id="g" class="menu-slider">
 			<p class="subtitle center">- A pine tree in your glass?</p>
 
-			<h1 class="center text-shadow neon-on-load">
+			<h1 class="center text-shadow neon-on-tap">
 				Gin drinks
 			</h1>
 
@@ -256,7 +273,7 @@
 
 
 			<!-- Add the class "vertical" to the div below to switch to a stacked layout. -->
-			<div class="slider-wrapper icons invert card-shadow">
+			<div class="slider-wrapper icons card-shadow">
 
         <div class="card">
           <img src="img/coupe.webp" class="card__image">
@@ -332,14 +349,14 @@
     <section id="r"  class="menu-slider">
 			<p class="subtitle center">- Feelin' like a pirate?</p>
 
-			<h1 class="center text-shadow neon-on-load">
+			<h1 class="center text-shadow neon-on-tap">
 				Rum drinks
 			</h1>
 
       <p class="description center"></p>
 
 			<!-- Add the class "vertical" to the div below to switch to a stacked layout. -->
-			<div class="slider-wrapper icons invert card-shadow">
+			<div class="slider-wrapper icons card-shadow">
 
         <div class="card">
 					<img src="img/tiki.webp" class="card__image">
@@ -491,14 +508,14 @@
 		<section id="w"  class="menu-slider">
 			<p class="subtitle center">- Want to taste an ol' barrel?</p>
 
-			<h1 class="center text-shadow neon-on-load">
+			<h1 class="center text-shadow neon-on-tap">
 				Whiskey drinks
 			</h1>
 
       <p class="description center"></p>
 
 			<!-- Add the class "vertical" to the div below to switch to a stacked layout. -->
-			<div class="slider-wrapper icons invert card-shadow">
+			<div class="slider-wrapper icons card-shadow">
 
         <div class="card">
 					<img src="img/rocks.webp" class="card__image">
@@ -578,13 +595,13 @@
     <!-- <section class="menu-slider">
 			<p class="subtitle center">- Lemonade with a surprise?</p>
 
-			<h1 class="center text-shadow neon-on-load">
+			<h1 class="center text-shadow neon-on-tap">
 				Vodka drinks
 			</h1>
 
       <p class="description center"></p>
 
-			<div class="slider-wrapper icons invert card-shadow">
+			<div class="slider-wrapper icons card-shadow">
 
         <div class="card">
 					<img src="img/coupe.webp" class="card__image">
@@ -605,14 +622,14 @@
     <section id="s" class="menu-slider">
 			<p class="subtitle center">- You have to be a really important guest</p>
 
-			<h1 class="center text-shadow neon-on-load">
+			<h1 class="center text-shadow neon-on-tap">
 				Specials
 			</h1>
 
       <p class="description center"></p>
 
 			<!-- Add the class "vertical" to the div below to switch to a stacked layout. -->
-			<div class="slider-wrapper icons invert card-shadow vertical center">
+			<div class="slider-wrapper icons card-shadow vertical center">
 
         <div class="card">
 					<img src="img/beer.webp" class="card__image">
@@ -654,14 +671,14 @@
     <section id="0" class="menu-slider">
 			<p class="subtitle center">- No less delicious</p>
 
-			<h1 class="center text-shadow neon-on-load">
+			<h1 class="center text-shadow neon-on-tap">
 				Alco-free
 			</h1>
 
       <p class="description center"></p>
 
 			<!-- Add the class "vertical" to the div below to switch to a stacked layout. -->
-			<div class="slider-wrapper icons invert card-shadow vertical center">
+			<div class="slider-wrapper icons card-shadow vertical center">
 
         <div class="card">
 					<img src="img/mug.webp" class="card__image">
