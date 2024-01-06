@@ -168,8 +168,8 @@ nav {
   padding: 1.5rem 2rem 2rem;
   width: 100%;
   text-align: center;
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   scroll-snap-type: x mandatory;
 
   display: flex;
@@ -177,8 +177,16 @@ nav {
   scroll-snap-type: x mandatory;
 }
 
-nav span {
+/* nav span {
   padding: 0 10px;
+} */
+
+nav a {
+  padding: 0 10px;
+}
+
+nav a.active {
+  text-decoration: none
 }
 
 a {

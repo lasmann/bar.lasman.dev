@@ -75,6 +75,43 @@ neonsigns.forEach(sign => {
 
 
 
+
+const navLinks = document.querySelectorAll('nav a');
+const sections = document.querySelectorAll('section');
+
+function changeLinkState() {
+  const middleOfViewport = window.innerHeight / 2; // Middle of the viewport
+
+  sections.forEach((section, index) => {
+    const sectionTop = section.offsetTop - middleOfViewport;
+    const sectionBottom = sectionTop + section.clientHeight;
+
+    if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+      navLinks.forEach((link) => link.classList.remove('active'));
+      navLinks[index].classList.add('active');
+    }
+  });
+}
+
+function scrollToActiveLink() {
+  const activeLink = document.querySelector('nav a.active');
+  if (activeLink) {
+    setTimeout(function(){
+      activeLink.scrollIntoView({ behavior: 'instant', block: 'center' });
+    }, 10)
+    
+  }
+}
+
+changeLinkState(); // Call initially to set active link on page load
+scrollToActiveLink(); // Scroll to the active link on page load
+
+window.addEventListener('scroll', () => {
+  changeLinkState();
+  scrollToActiveLink(); // Scroll to the active link on scroll
+});
+
+
 /* Filter by ingredient type */
 
 // let ingredients = [];
