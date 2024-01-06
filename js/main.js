@@ -78,6 +78,7 @@ neonsigns.forEach(sign => {
 
 const navLinks = document.querySelectorAll('nav a');
 const sections = document.querySelectorAll('section');
+let canSetActive = true;
 
 function changeLinkState() {
   const middleOfViewport = window.innerHeight / 2; // Middle of the viewport
@@ -86,9 +87,16 @@ function changeLinkState() {
     const sectionTop = section.offsetTop - middleOfViewport;
     const sectionBottom = sectionTop + section.clientHeight;
 
-    if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-      navLinks.forEach((link) => link.classList.remove('active'));
-      navLinks[index].classList.add('active');
+    if (window.scrollY >= sectionTop && window.scrollY < sectionBottom && canSetActive) {
+      const activeLink = document.querySelector('nav a.active');
+      if (activeLink !== navLinks[index]) {
+        navLinks.forEach((link) => link.classList.remove('active'));
+        navLinks[index].classList.add('active');
+        canSetActive = false;
+        setTimeout(() => {
+          canSetActive = true;
+        }, 50); // Prevent setting "active" for 500ms
+      }
     }
   });
 }
@@ -96,10 +104,7 @@ function changeLinkState() {
 function scrollToActiveLink() {
   const activeLink = document.querySelector('nav a.active');
   if (activeLink) {
-    setTimeout(function(){
-      activeLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 10)
-    
+    activeLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 }
 
@@ -110,7 +115,6 @@ window.addEventListener('scroll', () => {
   changeLinkState();
   scrollToActiveLink(); // Scroll to the active link on scroll
 });
-
 
 /* Filter by ingredient type */
 
