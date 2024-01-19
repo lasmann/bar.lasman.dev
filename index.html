@@ -78,8 +78,8 @@
 
 
     <nav>
-      <a href="#f">Faves</a> <span>/</span>
       <a href="#t">Featured</a> <span>/</span>
+      <a href="#f">Faves</a> <span>/</span>
       <a href="#g">Gin</a> <span>/</span>
       <a href="#r">Rum</a> <span>/</span>
       <a href="#w">Whiskey</a> <span>/</span>
@@ -90,7 +90,7 @@
 
 
 
-    <section id="f" class="menu-slider">
+    <section id="t" class="menu-slider">
 			<p class="subtitle center">- What are we drinking today?</p>
 
       <!-- 
@@ -106,7 +106,7 @@
 				Tonight's picks
 			</h1>
 
-			<p class="description center">A special selection of cocktails that we're serving today.</p>
+			<p class="description center">A special selection of cocktails we're serving today.</p>
 
       <!-- 
         Class options: 
@@ -116,6 +116,28 @@
           invert - inverts image color
       -->
 			<div class="slider-wrapper vertical icons invert card-shadow center">
+
+        <div class="card">
+					<img src="img/tiki.webp" class="card__image">
+					<p class="card__name">Mai Tai</p>
+					<p class="card__recipe">Rum, Lime, Orgeat, Orange</p>
+					<p class="card__formula">
+            2 oz Rum 
+            1 oz Lime
+            0.5 oz Curacao 
+            0.75 oz Orgeat
+            0.25 oz Simple
+          </p>
+				</div>
+
+        <div class="card">
+					<img src="img/coupe.webp" class="card__image">
+					<p class="card__name">Strawberry Daiquiri</p>
+					<p class="card__recipe">Rum, Strawberry, Lime</p>
+					<p class="card__formula">
+            2:1:1
+          </p>
+				</div>
 
         <div class="card">
 					<img src="img/rocks.webp" class="card__image">
@@ -135,7 +157,7 @@
           </div>
 				</div>
 
-        <div class="card">
+        <!-- <div class="card">
 					<img src="img/coupe.webp" class="card__image">
 					<p class="card__name">Whiskey Sour</p>
 					<p class="card__recipe">Whiskey, Lemon, Bitters</p>
@@ -149,30 +171,31 @@
             <color style="--color: rgb(240 219 45) "></color>
             <color style="--color: rgb(203 142 21)"></color>
           </div>
-				</div>
+				</div> -->
 
         <div class="card">
 					<img src="img/tiki.webp" class="card__image">
 					<p class="card__name">Coffee Mai Tai</p>
-					<p class="card__recipe">Rum, Campari, Orange, Lime, Orgeat</p>
+					<p class="card__recipe">Rum, Coffee, Lime, Orgeat, Orange</p>
 					<p class="card__formula">
-            0.75 oz Rum
-            1.5 oz Campari
+            1.5 oz Rum 
             1 oz Lime
+            0.5 oz Curacao 
+            0.5 oz Coffee liqueur 
             0.75 oz Orgeat
           </p>
 				</div>
 
-        <div class="card">
+        <!-- <div class="card">
 					<img src="img/coupe.webp" class="card__image">
 					<p class="card__name">Espresso Martini</p>
 					<p class="card__recipe">Vodka, Coffee</p>
 					<p class="card__formula">
             1:1:1 Espresso:Vodka:Coffee liqueur
           </p>
-        </div>
+        </div> -->
 
-        <div class="card">
+        <!-- <div class="card">
 					<img src="img/pina.webp" class="card__image">
 					<p class="card__name">Dole Whip</p>
 					<p class="card__recipe">Rum, Pineapple, Coconut, Banana, Lemon, Lime</p>
@@ -187,9 +210,9 @@
           <div class="palette">
             <color style="--color: rgb(244 233 110)"></color>
           </div>
-				</div>
+				</div> -->
 
-        <div class="card">
+        <!-- <div class="card">
 					<img src="img/tall.webp" class="card__image">
 					<p class="card__name">Ramos Gin Fizz</p>
 					<p class="card__recipe">Gin, Cream, Lemon, Lime, Bubbles</p>
@@ -201,9 +224,9 @@
             0.5 oz Lime, Lemon
             Egg white
           </p>
-				</div>
+				</div> -->
 
-        <div class="card">
+        <!-- <div class="card">
 					<img src="img/coupe.webp" class="card__image">
 					<p class="card__name">Frozen Queen's Park Swizzle</p>
 					<p class="card__recipe">Rum, Mint, Lime, Bitters</p>
@@ -228,9 +251,9 @@
             <color style="--color: rgb(239 188 79)"></color>
             <color style="--color: rgb(42 83 3)"></color>
           </div>
-				</div>
+				</div> -->
 
-        <div class="card">
+        <!-- <div class="card">
 					<img src="img/tiki.webp" class="card__image">
 					<p class="card__name">Bitter Mai Tai</p>
 					<p class="card__recipe">Rum, Campari, Orange, Lime, Orgeat</p>
@@ -239,10 +262,11 @@
             1.5 oz Campari
             1 oz Lime
             0.75 oz Orgeat
+            0.5 oz Cointreau
           </p>
-				</div>
+				</div> -->
 
-        <div class="card">
+        <!-- <div class="card">
 					<img src="img/coupe.webp" class="card__image">
 					<p class="card__name">Pornstar Martini</p>
 					<p class="card__recipe">Rum, Vanilla, Passion fruit, Pineapple, Orange, Lime</p>
@@ -254,7 +278,7 @@
             1 oz Lime
             3 dashes Orange bitters
           </p>
-        </div>
+        </div> -->
 
 			</div>
 		</section>	
@@ -263,7 +287,7 @@
 
 
     <section id="f" class="menu-slider">
-			<p class="subtitle center">- A safe bet.</p>
+			<p class="subtitle center">- A safe bet</p>
 
 			<h1 class="center text-shadow neon-on-load">
 				Guest Faves
@@ -336,42 +360,12 @@
 
         <div class="card">
 					<img src="img/coupe.webp" class="card__image">
-					<p class="card__name">Trinidad Sour</p>
-					<p class="card__recipe">Whiskey, Bitters, Lemon, Orgeat</p>
-					<p class="card__formula">
-            0.5 oz Whiskey
-            1 oz Orgeat
-            0.75 oz Lemon
-            1 oz Ango
-            Egg white
-          </p>
-          <div class="palette">
-            <color style="--color: rgb(233 178 150)"></color>
-            <color style="--color: rgb(69 0 2)"></color>
-            <color style="--color: rgb(108 45 40)"></color>
-          </div>
-          <color style="--color: linear-gradient(0deg, rgb(108 45 40) 1%, rgb(69 0 2) 84%, rgb(233 178 150) 84%, rgb(234 170 126) 100%);"></color>
-				</div>
-
-        <div class="card">
-					<img src="img/coupe.webp" class="card__image">
 					<p class="card__name">Strawberry Daiquiri</p>
 					<p class="card__recipe">Rum, Strawberry, Lime</p>
 					<p class="card__formula">
             2:1:1
           </p>
 				</div>
-
-        <div class="card">
-					<img src="img/rocks.webp" class="card__image">
-					<p class="card__name">Boozy Shakerato</p>
-					<p class="card__recipe">Vodka, Cream, Coffee</p>
-					<p class="card__formula">
-            ...
-          </p>
-				</div>
-
-
         
 			</div>
 		</section>	
@@ -532,6 +526,7 @@
             1.5 oz Campari
             1 oz Lime
             0.75 oz Orgeat
+            0.5 oz Cointreau
           </p>
 				</div>
 
@@ -654,6 +649,18 @@
             2 dash Ango
           </p>
         </div>
+
+        <!-- The Stranglehold
+
+• 1 1/4 ounce Diplomatico rum
+
+• 3/4 ounce Small Hand Foods orgeat
+
+• 3/4 ounce freshly squeezed lime juice
+
+• 1/2 ounce Rittenhouse 100 proof rye whiskey
+
+• 1/2 ounce Angostura bitters -->
       
         <div class="card">
 					<img src="img/rocks.webp" class="card__image">
@@ -729,6 +736,24 @@
       <p class="description center"></p>
 
 			<div class="slider-wrapper icons invert card-shadow">
+
+        <div class="card">
+					<img src="img/rocks.webp" class="card__image">
+					<p class="card__name">Boozy Shakerato</p>
+					<p class="card__recipe">Vodka, Cream, Coffee</p>
+					<p class="card__formula">
+            ...
+          </p>
+				</div>
+
+        <div class="card">
+					<img src="img/coupe.webp" class="card__image">
+					<p class="card__name">Espresso Martini</p>
+					<p class="card__recipe">Vodka, Coffee</p>
+					<p class="card__formula">
+            1:1:1 Espresso:Vodka:Coffee liqueur
+          </p>
+        </div>
 
         <div class="card">
 					<img src="img/coupe.webp" class="card__image">
