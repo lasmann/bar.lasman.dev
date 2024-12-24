@@ -1,411 +1,336 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/main.css" rel="stylesheet" />
+    <script defer src="js/main.js"></script>
+    <script defer src="js/Tocca.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Montserrat:ital,wght@0,400;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Cocktail Menu</title>
+    <meta name="theme-color" content="#222222" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/main.css" rel="stylesheet">
-  <script defer src="js/main.js"></script>
-  <script defer src="js/Tocca.min.js"></script>
+    <style>
+      :root {
+        --main-bg-color: #222;
+        --main-text-color: #fff;
+        --card-bg-color: #373737;
+        --subdued-text-color: #7a7a7a;
+        --text-shadow: 0px 10px 30px #000;
+        --neon-sign-color: #c8851c;
+        --heading-font: "Montserrat", sans-serif;
+        --body-font: "Courier Prime", monospace;
+        --base-font-size: 10px;
+        --body-font-size: 1.6rem;
+        --heading-margin-bottom: 3rem;
+        --heading-margin-top: 2rem;
+        --heading-font-line-height: 1.4;
+        --card-icon-width: 50%;
+      }
+    </style>
+  </head>
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <body>
+    <nav>
+      <a href="#featured">Featured</a> <span>/</span> <a href="#f">Faves</a>
+      <span>/</span> <a href="#g">Gin</a> <span>/</span> <a href="#r">Rum</a>
+      <span>/</span> <a href="#v">Vodka</a> <span>/</span>
+      <a href="#t">Tequila</a> <span>/</span> <a href="#w">Whiskey</a>  <span>/</span> 
+      <!-- <span>/</span> <a href="#s">Special</a> <span>/</span> -->
+      <a href="#0">0%</a>
+    </nav>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Montserrat:ital,wght@0,400;0,800;1,400&display=swap"
-    rel="stylesheet">
+    <section id="featured" class="menu-slider">
+      <p class="subtitle center">- What are we drinking today?</p>
+      <h1 class="center text-shadow neon-on-load">Tonight's picks</h1>
+      <p class="description center">
+        A special selection of cocktails we're serving today.
+      </p>
 
-  <title>Cocktail Menu</title>
-  <meta name="theme-color" content="#222222">
-  <!-- <meta name="description" content="Cocktail menu project. Get the code, tweak the settings, add recipies and you're good to go!"> -->
-  <meta name="description" content="Yes I built my own cocktail menu. Yes that's overkill.">
-
-  <style>
-    /*  
-
-          Change color settings here by changing hex codes. 
-          Preview the changes by clicking on "html" in DevTools and going to ":root" in styles. 
-          Replace hex-code with "0" to disable the setting (ex. to disable text-shadow-color). 
-
-      */
-
-    :root {
-      /*----- Main background and text color -----*/
-      --main-bg-color: #222;
-      --main-text-color: #fff;
-
-      /*----- Card and section background color -----*/
-      --card-bg-color: #373737;
-      /* --section-bg-color: #ffffff; */
-
-      /*----- Subdued text color -----*/
-      --subdued-text-color: #7a7a7a;
-
-      /*----- Heading text shadow -----*/
-      --text-shadow: 0px 10px 30px #000;
-
-      /*----- Neon sign color -----*/
-      --neon-sign-color: #c8851c;
-
-      /*----- Font families -----*/
-      --heading-font: 'Montserrat', sans-serif;
-      --body-font: 'Courier Prime', monospace;
-
-      /*----- Quickly adjust font-size throughout the site -----*/
-      --base-font-size: 10px;
-
-      /*----- Adjusts body font size -----*/
-      --body-font-size: 1.6rem;
-
-      /*----- Some fonts have issues with line-height. Try different margin-bottoms -----*/
-      --heading-margin-bottom: 3rem;
-      --heading-margin-top: 2rem;
-      --heading-font-line-height: 1.4;
-
-      /*----- Section border -----*/
-      /* --section-border: 3px solid #222; */
-
-      /*----- Card icon width relative to the card -----*/
-      --card-icon-width: 50%;
-    }
-  </style>
-</head>
-
-<body>
-
-
-
-  <nav>
-    <a href="#feat">Featured</a> <span>/</span>
-    <a href="#f">Faves</a> <span>/</span>
-    <a href="#g">Gin</a> <span>/</span>
-    <a href="#r">Rum</a> <span>/</span>
-    <a href="#v">Vodka</a> <span>/</span>
-    <a href="#t">Tequila</a> <span>/</span>
-    <a href="#w">Whiskey</a> <span>/</span>
-    <a href="#s">Special</a> <span>/</span>
-    <a href="#0">0%</a>
-  </nav>
-
-
-
-
-  <section id="feat" class="menu-slider">
-    <p class="subtitle center">- What are we drinking today?</p>
-
-    <!-- 
-        Class options: 
-          center - centers text
-          desktop-center - centers text on desktop only
-          mobile-center - centers text on mobile only
-          text-shadow - adds a text shadow
-          neon - adds pulsating neon sign-like effect
-          neon-on-tap - enable neon sign-like effect on double-tap
-      -->
-    <h1 class="center text-shadow neon-on-load">
-      Tonight's picks
-    </h1>
-
-    <p class="description center">A special selection of cocktails we're serving today.</p>
-
-    <!-- 
-        Class options: 
-          vertical - switches to stacked card layout
-          icons - adjusts image sizes to fit icons
-          card-shadow - adds shadow to cards
-          invert - inverts image color
-      -->
-    <div class="slider-wrapper vertical icons invert card-shadow center">
-
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">"Winter Cherry" Haircut</p>
-        <p class="card__recipe">Rum, Raspberry, Lemon, Coconut</p>
-        <p class="card__formula">
-          1.5 oz Rum
-          10 Raspberries
-          1 oz Lemon
-          1 oz Simple
-          Coconut rim
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Thyme Smash</p>
-        <p class="card__recipe">Gin, Thyme, Lime</p>
-        <p class="card__formula">
-          2 oz Gin
-          1 oz Simple
-          Thyme
-          Half lime, sliced
-          Smash
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Matchuzu Sour</p>
-        <p class="card__recipe">Rum, Yuzu, Matcha, Lemon</p>
-        <p class="card__formula">
-          1.5 oz Rum
-          1 oz Yuzu
-          1 oz Lemon
-          1 tsp matcha
-          Egg white
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Raspberony</p>
-        <p class="card__recipe">Gin, Lime, Campari, Raspberry</p>
-        <p class="card__formula">
-          1 oz Gin
-          10 Raspberries
-          0.75 oz lime
-          1 oz Campari
-          0.5 oz Simple
-          Egg white
-          Reverse dry shake
-        </p>
-      </div>
-
-
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Matchita</p>
-        <p class="card__recipe">Vodka, White Pepper, Yuzu, Mint, Lemon</p>
-        <p class="card__formula">
-          1.5 oz Vodka
-          0.5 oz Fernet Mentha
-          1 tsp Matcha
-          0.5 oz Lemon
-          0.25 oz Simple
-          Mint
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Amaretto Sour</p>
-        <p class="card__recipe">Whiskey, Lemon, Almond, Bitters</p>
-        <p class="card__formula">
-          1.5 oz Whiskey
-          1 oz Lemon
-          1 oz Orgeat
-          1 dash Ango
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Basil Smash</p>
-        <p class="card__recipe">Basil infused Gin, Lime, Strawberry foam</p>
-        <p class="card__formula">
-          2 oz Bazil infused Gin
-          1 oz Lime
-          0.5 oz Simple
-
-          Strawberry foam:
-          2 egg whites
-          1.5oz strawberry concentrate
-          1oz lemon
-          3oz water
-        </p>
-      </div>
-
-
-
-
-      <!-- <div class="card">
-					<img src="img/coupe.webp" class="card__image">
-					<p class="card__name">Espresso Martini</p>
-					<p class="card__recipe">Vodka, Coffee</p>
-					<p class="card__formula">
-            1:1:1 Espresso:Vodka:Coffee liqueur
+      <div class="slider-wrapper vertical icons invert card-shadow center">
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Earl Gray MarTEAni</p>
+          <p class="card__recipe">Earl Gray infused Gin, Lemon, Sugar rim</p>
+          <p class="card__formula">
+            1.5 oz Infused Gin
+            0.75 oz Lemon
+            1 Egg white
+            1 oz Simple
           </p>
-        </div> -->
+        </div>
 
-      <!-- <div class="card">
-					<img src="img/pina.webp" class="card__image">
-					<p class="card__name">Dole Whip</p>
-					<p class="card__recipe">Rum, Pineapple, Coconut, Banana, Lemon, Lime</p>
-					<p class="card__formula">
-            2 oz Rum
-            450 g Frozen pineapple
-            1/2 Banana
-            2.6 oz/77 ml Coconut milk
-            3 tbs/36 g Sugar
-            0.25 oz Lemon + Lime
-          </p>
-          <div class="palette">
-            <color style="--color: rgb(244 233 110)"></color>
-          </div>
-				</div> -->
-
-      <!-- <div class="card">
-					<img src="img/coupe.webp" class="card__image">
-					<p class="card__name">Frozen Queen's Park Swizzle</p>
-					<p class="card__recipe">Rum, Mint, Lime, Bitters</p>
-					<p class="card__formula">
-            2.25 oz sugared Rum
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Matchita</p>
+          <p class="card__recipe">White Pepper infused Vodka, Mint, Lime</p>
+          <p class="card__formula">
+            2 oz white pepper Vodka
+            0.5 oz Fernet Mentha
+            0.5oz Orange liqueur
+            1 tsp Matcha
             0.5 oz Lime
-            2-10 dash Ango
-            8-10 Mint leaves
-            120 ml Ice
-            2-5 drops Saline
-
-            - - - - - - - - -
-            
-            2 oz Rum 
-            8-10 Mint leaves
-            2-10 dash Ango
-            1 oz Lime
-            0.75 oz Simple
+            0.25 oz Simple
+            Flower water
           </p>
-          <div class="palette">
-            <color style="--color: rgb(158 16 17)"></color>
-            <color style="--color: rgb(239 188 79)"></color>
-            <color style="--color: rgb(42 83 3)"></color>
-          </div>
-				</div> -->
+        </div>
 
-    </div>
-  </section>
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Cable Car</p>
+          <p class="card__recipe">Chai Spiced Rum, Orange, Lemon</p>
+          <p class="card__formula">
+            1.75 oz Chai Spiced Rum
+            0.5 oz Orange liqueur
+            0.25 oz Simple
+            0.5 oz Lemon
+            Egg white
+            
+            Cinnamon and Orange zest
+          </p>
+        </div>
 
+        <div class="card">
+          <img src="img/tiki.webp" class="card__image" />
+          <p class="card__name">Mai Tai</p>
+          <p class="card__recipe">Rum, Lime, Almond, Orange</p>
+          <p class="card__formula">
+            2 oz Rum
+            1 oz Lime
+            0.5 oz Curacao
+            0.75 oz Orgeat
+            0.25 oz Simple
+          </p>
+        </div>
 
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Amaretto Sour</p>
+          <p class="card__recipe">Whiskey, Lemon, Almond, Bitters</p>
+          <p class="card__formula">
+            1.5 oz Whiskey
+            1 oz Lemon
+            1 oz Orgeat
+            1 dash Ango
+          </p>
+        </div>
 
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Strawberry Daiquiri</p>
+          <p class="card__recipe">Rum, Strawberry, Lime</p>
+          <p class="card__formula">
+            2:1:1
+          </p>
+        </div>
 
-  <section id="f" class="menu-slider">
-    <p class="subtitle center">- A safe bet</p>
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Chai Spiced Rum Old Fashioned</p>
+          <p class="card__recipe">Chai Spiced Rum, Orange</p>
+          <p class="card__formula">
+            2 oz Chai Spiced Rum
+            0.25 oz Simple
+            3 dash Orange bitters
+            
+            Orange peel
+          </p>
+        </div>
 
-    <h1 class="center text-shadow neon-on-load">
-      Guest Faves
-    </h1>
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Strawberony</p>
+          <p class="card__recipe">Gin, Lime, Campari, Strawberry</p>
+          <p class="card__formula">
+            1 oz Gin
+            Strawberries
+            0.5 oz lime
+            1 oz Campari
+            0.5 oz Simple
+            Egg white
 
-    <p class="description center">Can't go wrong with any of those.</p>
+            Reverse dry shake
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <div class="slider-wrapper vertical icons invert card-shadow center">
+    <section id="f" class="menu-slider">
+      <p class="subtitle center">- A safe bet</p>
+      <h1 class="center text-shadow neon-on-load">Guest Faves</h1>
+      <p class="description center">Can't go wrong with any of those.</p>
 
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Earl Gray MarTEAni</p>
-        <p class="card__recipe">Earl Gray infused Gin, Lemon, Sugar rim</p>
-        <p class="card__formula">
+      <div class="slider-wrapper vertical icons invert card-shadow center">
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Earl Gray MarTEAni</p>
+          <p class="card__recipe">Earl Gray infused Gin, Lemon, Sugar rim</p>
+          <p class="card__formula">
+            1.5 oz Infused Gin
+            0.75 oz Lemon
+            1 Egg white
+            1 oz Simple
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Raspberony</p>
+          <p class="card__recipe">Gin, Lime, Campari, Raspberry</p>
+          <p class="card__formula">
+            1 oz Gin
+            10 Raspberries
+            0.75 oz lime
+            1 oz Campari
+            0.5 oz Simple
+            Egg white
+            Reverse dry shake
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">"Winter Cherry" Haircut</p>
+          <p class="card__recipe">Rum, Raspberry, Lemon, Coconut</p>
+          <p class="card__formula">
+            1.5 oz Rum
+            10 Raspberries
+            1 oz Lemon
+            1 oz Simple
+            Coconut rim
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Boozy Shakerato</p>
+          <p class="card__recipe">Rum, Cream, Coffee</p>
+          <p class="card__formula">
+            2 oz Rum
+            1.5 oz Espresso
+            1.5 oz Heavy cream
+            0.5 oz Simple
+            2 drops Saline
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">The Wellerman</p>
+          <p class="card__recipe">Rum, Matcha, Lemon, Bitters</p>
+          <p class="card__formula">
+            2:1:0.75
+            1 tsp Matcha
+            Egg white
+            Ango dots
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Thyme Smash</p>
+          <p class="card__recipe">Gin, Thyme, Lime</p>
+          <p class="card__formula">
+            2 oz Gin
+            1 oz Simple
+            Thyme
+            Half lime, sliced
+            Smash
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="img/tiki.webp" class="card__image" />
+          <p class="card__name">Mai Tai</p>
+          <p class="card__recipe">Rum, Lime, Almond, Orange</p>
+          <p class="card__formula">
+            2 oz Rum
+            1 oz Lime
+            0.5 oz Curacao
+            0.75 oz Orgeat
+            0.25 oz Simple
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Strawberry Daiquiri</p>
+          <p class="card__recipe">Rum, Strawberry, Lime</p>
+          <p class="card__formula">
+            2:1:1
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="g" class="menu-slider">
+      <p class="subtitle center">- A pine tree in your glass?</p>
+      <h1 class="center text-shadow neon-on-load">Gin drinks</h1>
+      <p class="description center"></p>
+
+      <div class="slider-wrapper icons invert card-shadow">
+
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Basil Smash</p>
+          <p class="card__recipe">Basil infused Gin, Lime, Strawberry foam</p>
+          <p class="card__formula">
+            2 oz Bazil infused Gin
+            1 oz Lime
+            0.5 oz Simple
+            Strawberry foam:
+            2 egg whites
+            1.5oz strawberry concentrate
+            1oz lemon
+            3oz water
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Earl Gray MarTEAni</p>
+          <p class="card__recipe">Earl Gray infused Gin, Lemon, Sugar rim</p>
+          <p class="card__formula">
           1.5 oz Infused Gin
           0.75 oz Lemon
           1 Egg white
           1 oz Simple
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Boozy Shakerato</p>
-        <p class="card__recipe">Rum, Cream, Coffee</p>
-        <p class="card__formula">
-          2 oz Rum
-          1.5 oz Espresso
-          1.5 oz Heavy cream
-          0.5 oz Simple
-          2 drops Saline
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">The Wellerman</p>
-        <p class="card__recipe">Rum, Matcha, Lemon, Bitters</p>
-        <p class="card__formula">
-          2:1:0.75
-          1 tsp Matcha
-          Egg white
-          Ango dots
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="img/tiki.webp" class="card__image">
-        <p class="card__name">Mai Tai</p>
-        <p class="card__recipe">Rum, Lime, Almond, Orange</p>
-        <p class="card__formula">
-          2 oz Rum
-          1 oz Lime
-          0.5 oz Curacao
-          0.75 oz Orgeat
-          0.25 oz Simple
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Strawberry Daiquiri</p>
-        <p class="card__recipe">Rum, Strawberry, Lime</p>
-        <p class="card__formula">
-          2:1:1
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-
-
-  <section id="g" class="menu-slider">
-    <p class="subtitle center">- A pine tree in your glass?</p>
-
-    <h1 class="center text-shadow neon-on-load">
-      Gin drinks
-    </h1>
-
-    <p class="description center"></p>
-
-
-    <!-- Add the class "vertical" to the div below to switch to a stacked layout. -->
-    <div class="slider-wrapper icons invert card-shadow">
-
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Earl Gray MarTEAni</p>
-        <p class="card__recipe">Earl Gray infused Gin, Lemon, Sugar rim</p>
-        <p class="card__formula">
-          1.5 oz Infused Gin
-          0.75 oz Lemon
-          1 Egg white
-          1 oz Simple
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Negroni</p>
-        <p class="card__recipe">Gin, Sweet vermouth, Campari</p>
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Negroni</p>
+          <p class="card__recipe">Gin, Sweet vermouth, Campari</p>
         <p class="card__formula">
           1:1:1
         </p>
-      </div>
+        </div>
 
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Gimlet</p>
-        <p class="card__recipe">Gin, Lime cordial</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Gimlet</p>
+          <p class="card__recipe">Gin, Lime cordial</p>
+          <p class="card__formula">
           2 oz Gin
           0.75 oz Simple
           0.75 oz Lime superjuice
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Raspberony</p>
-        <p class="card__recipe">Gin, Lime, Campari, Raspberry</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Raspberony</p>
+          <p class="card__recipe">Gin, Lime, Campari, Raspberry</p>
+          <p class="card__formula">
           1 oz Gin
           10 Raspberries
           0.75 oz lime
@@ -413,14 +338,14 @@
           0.5 oz Simple
           Egg white
           Reverse dry shake
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/tall.webp" class="card__image">
-        <p class="card__name">Ramos Nitro Fizz</p>
-        <p class="card__recipe">Gin, Cream, Lemon, Lime, Bubbles</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/tall.webp" class="card__image" />
+          <p class="card__name">Ramos Nitro Fizz</p>
+          <p class="card__recipe">Gin, Cream, Lemon, Lime, Bubbles</p>
+          <p class="card__formula">
           In syphon
           2 oz Gin
           1 oz Simple
@@ -433,222 +358,163 @@
           add ice, charge
 
           top bubbles
-        </p>
-      </div>
-
-      <!-- <div class="card">
-        <img src="img/tall.webp" class="card__image">
-        <p class="card__name">Ramos Gin Fizz</p>
-        <p class="card__recipe">Gin, Cream, Lemon, Lime, Bubbles</p>
-        <p class="card__formula">
-          2 oz Gin
-          1 oz Heavy cream
-          3 dash OBW
-          0.5 oz Simple
-          0.5 oz Lime, Lemon
-          Egg white
-        </p>
-      </div> -->
-
-      <!-- <div class="card">
-					<img src="img/coupe.webp" class="card__image">
-					<p class="card__name">First Lady</p>
-					<p class="card__recipe">Gin, Orange, Matcha, Lemon</p>
-					<p class="card__formula">
-            1.5 oz Gin 
-            0.5 oz Cointreau
-            0.5 oz Simple
-            0.5 oz Lemon
-            1 tsp Matcha
-            Egg white
           </p>
-				</div> -->
+        </div>
+      </div>
+    </section>
 
-    </div>
-  </section>
+    <section id="r" class="menu-slider">
+      <p class="subtitle center">- Feelin' like a pirate?</p>
+      <h1 class="center text-shadow neon-on-load">Rum drinks</h1>
+      <p class="description center"></p>
 
-
-
-
-
-
-
-  <section id="r" class="menu-slider">
-    <p class="subtitle center">- Feelin' like a pirate?</p>
-
-    <h1 class="center text-shadow neon-on-load">
-      Rum drinks
-    </h1>
-
-    <p class="description center"></p>
-
-    <!-- Add the class "vertical" to the div below to switch to a stacked layout. -->
-    <div class="slider-wrapper icons invert card-shadow">
-
-      <div class="card">
-        <img src="img/tiki.webp" class="card__image">
-        <p class="card__name">Mai Tai</p>
-        <p class="card__recipe">Rum, Lime, Almond, Orange</p>
-        <p class="card__formula">
+      <div class="slider-wrapper icons invert card-shadow">
+        <div class="card">
+          <img src="img/tiki.webp" class="card__image" />
+          <p class="card__name">Mai Tai</p>
+          <p class="card__recipe">Rum, Lime, Almond, Orange</p>
+          <p class="card__formula">
           2 oz Rum
           1 oz Lime
           0.5 oz Curacao
           0.75 oz Orgeat
           0.25 oz Simple
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/tall.webp" class="card__image">
-        <p class="card__name">German Vacation</p>
-        <p class="card__recipe">Rum, Jager, Ginger, Lemon, Almond, Bitters</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Soviet Milkshake</p>
+          <p class="card__recipe">Rum, Condensed Milk, Raspberry, Orange</p>
+          <p class="card__formula">
+            1.5 oz Rum
+            1.5 oz Condensed milk
+            3 Rasperries
+            2 dash Orange bitters
+            Orange slice
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="img/tall.webp" class="card__image" />
+          <p class="card__name">German Vacation</p>
+          <p class="card__recipe">Rum, Jager, Ginger, Lemon, Almond, Bitters</p>
+          <p class="card__formula">
           1 oz Rum
           1 oz Jager
           Ginger
           0.75 Lemon
           0.75 oz Orgeat
           0.25 oz Simple
-          3 dash Peychauds
-        </p>
-      </div>
+            3 dash Peychauds
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Strawberry Daiquiri</p>
-        <p class="card__recipe">Rum, Strawberry, Lime</p>
-        <p class="card__formula">
-          2:1:1
-        </p>
-      </div>
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Strawberry Daiquiri</p>
+          <p class="card__recipe">Rum, Strawberry, Lime</p>
+          <p class="card__formula">
+            2:1:1
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/tall.webp" class="card__image">
-        <p class="card__name">Queen's Park Swizzle</p>
-        <p class="card__recipe">Rum, Mint, Lime, Bitters</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/tall.webp" class="card__image" />
+          <p class="card__name">Queen's Park Swizzle</p>
+          <p class="card__recipe">Rum, Mint, Lime, Bitters</p>
+          <p class="card__formula">
           2 oz Rum
           8-10 Mint leaves
           2-10 dash Ango
           1 oz Lime
           0.75 oz Simple
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/tiki.webp" class="card__image">
-        <p class="card__name">Bitter Mai Tai</p>
-        <p class="card__recipe">Rum, Campari, Orange, Lime, Almond</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/tiki.webp" class="card__image" />
+          <p class="card__name">Bitter Mai Tai</p>
+          <p class="card__recipe">Rum, Campari, Orange, Lime, Almond</p>
+          <p class="card__formula">
           0.75 oz Rum
           1.5 oz Campari
           1 oz Lime
           0.75 oz Orgeat
           0.5 oz Cointreau
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">The Wellerman</p>
-        <p class="card__recipe">Rum, Matcha, Lemon</p>
-        <p class="card__formula">
-          2:1:0.5
-          1 tsp Matcha
-          Egg white
-        </p>
-      </div>
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">The Wellerman</p>
+          <p class="card__recipe">Rum, Matcha, Lemon</p>
+          <p class="card__formula">2:1:0.5 1 tsp Matcha Egg white</p>
+        </div>
 
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Pornstar Martini</p>
-        <p class="card__recipe">Rum, Vanilla, Passion fruit, Pineapple, Orange, Lime</p>
-        <p class="card__formula">
-          1.5 x Passion fruits
-          2 oz Rum/Vodka
-          0.75 oz Syrup
-          2 oz Pineapple
-          1 oz Lime
-          3 dash Orange bitters
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="img/tall.webp" class="card__image">
-        <p class="card__name">Cuba Libre</p>
-        <p class="card__recipe">Rum, Coke, Lime, Bitters</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/tall.webp" class="card__image" />
+          <p class="card__name">Cuba Libre</p>
+          <p class="card__recipe">Rum, Coke, Lime, Bitters</p>
+          <p class="card__formula">
           2 oz Rum
           2 dash Ango
           0.75 oz Lime
           Top w Coke
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/pina.webp" class="card__image">
-        <p class="card__name">Dole Whip</p>
-        <p class="card__recipe">Rum, Pineapple, Banana, Coconut, Lemon, Lime</p>
-        <p class="card__formula">
-          2 oz Rum
-          450 g Frozen pineapple
-          2.6 oz Coconut milk
-          3 tbs/36 g Sugar
-          4 drops Saline
-          Half a banana
-          0.25 oz Lemon + Lime
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Skater On Crack</p>
-        <p class="card__recipe">Rum, Jagermeister, Pineapple, Lime</p>
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Skater On Crack</p>
+          <p class="card__recipe">Rum, Jagermeister, Pineapple, Lime</p>
         <p class="card__formula">
           1:1:1:0.75:0.75
         </p>
-      </div>
+        </div>
 
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Painkiller</p>
-        <p class="card__recipe">Rum, Coconut, Orange, Pineapple</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Painkiller</p>
+          <p class="card__recipe">Rum, Coconut, Orange, Pineapple</p>
+          <p class="card__formula">
           2 oz Rum
           4 oz Pineapple
           1 oz Orange
           1 oz Cream of coconut
           Open pour
-          Grated nutmeg
-        </p>
+            Grated nutmeg
+          </p>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section id="v" class="menu-slider">
+      <p class="subtitle center">- Lemonade with a surprise?</p>
+      <h1 class="center text-shadow neon-on-load">Vodka drinks</h1>
+      <p class="description center"></p>
+      <div class="slider-wrapper icons invert card-shadow">
 
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Matchita</p>
+          <p class="card__recipe">White Pepper infused Vodka, Mint, Lime</p>
+          <p class="card__formula">
+            2 oz white pepper Vodka
+            0.5 oz Fernet Mentha
+            0.5oz Orange liqueur
+            1 tsp Matcha
+            0.5 oz Lime
+            0.25 oz Simple
+            Flower water
+          </p>
+        </div>
 
-
-
-
-
-
-
-  <section id="v" class="menu-slider">
-    <p class="subtitle center">- Lemonade with a surprise?</p>
-
-    <h1 class="center text-shadow neon-on-load">
-      Vodka drinks
-    </h1>
-
-    <p class="description center"></p>
-
-    <div class="slider-wrapper icons invert card-shadow">
-
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Nitrous Espresso</p>
-        <p class="card__recipe">Vodka, Espresso, Bubbles</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Nitrous Espresso</p>
+          <p class="card__recipe">Vodka, Espresso, Bubbles</p>
+          <p class="card__formula">
           1.5 oz Espresso
           1.75 oz Vodka
           0.5 oz Simple
@@ -659,279 +525,171 @@
           charge, shake and vent
           charge, shake 12 s
           wait 90 s
-        </p>
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Pornstar Martini</p>
+          <p class="card__recipe">Vodka, Vanilla, Passion fruit, Pineapple, Orange, Lime</p>
+          <p class="card__formula">
+          1.5 x Passion fruits
+          2 oz Vodka
+          0.75 oz Syrup
+          2 oz Pineapple
+          1 oz Lime
+          3 dash Orange bitters
+          </p>
+        </div>
       </div>
+    </section>
 
+    <section id="t" class="menu-slider">
+      <p class="subtitle center">- Feelin' caliente?</p>
+      <h1 class="center text-shadow neon-on-load">Tequila Drinks</h1>
+      <p class="description center"></p>
 
-    </div>
-  </section> 
-
-
-
-  <section id="te" class="menu-slider">
-    <p class="subtitle center">- Feelin' caliente?</p>
-    <h1 class="center text-shadow neon-on-load">Tequila Drinks</h1>
-    <p class="description center"></p>
-
-    <div class="slider-wrapper icons invert card-shadow">
-
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Spicy Grapefruit</p>
-        <p class="card__recipe">Tequila, Grapefruit, Lime, Bubbles</p>
-        <p class="card__formula">
+      <div class="slider-wrapper icons invert card-shadow">
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Spicy Grapefruit</p>
+          <p class="card__recipe">Tequila, Grapefruit, Lime, Bubbles</p>
+          <p class="card__formula">
           2 oz Tequila
           4 oz Grapefruit
           1 oz Lime
           1 oz Simple
           Carbonate
           Tajin rim
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Mexican Prostitute</p>
-        <p class="card__recipe">Tequila, Pineapple, Lime, Pomegranate, Almond</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Mexican Prostitute</p>
+          <p class="card__recipe">Tequila, Pineapple, Lime, Pomegranate, Almond </p>
+          <p class="card__formula">
           2 oz Tequila
           2 oz Pineapple
           1 oz Lime
-          0.25 oz Orgeat
+          0.25 o Orgeat
           0.25 oz Cointreau
           0.5 oz Grenadine
-        </p>
+          </p>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section id="w" class="menu-slider">
+      <p class="subtitle center">- Want to taste an ol' barrel?</p>
+      <h1 class="center text-shadow neon-on-load">Whiskey drinks</h1>
+      <p class="description center"></p>
 
-
-
-
-
-
-  <section id="w" class="menu-slider">
-    <p class="subtitle center">- Want to taste an ol' barrel?</p>
-
-    <h1 class="center text-shadow neon-on-load">
-      Whiskey drinks
-    </h1>
-
-    <p class="description center"></p>
-
-    <!-- Add the class "vertical" to the div below to switch to a stacked layout. -->
-    <div class="slider-wrapper icons invert card-shadow">
-
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Old Fashioned</p>
-        <p class="card__recipe">Whiskey, Bitters</p>
+      <div class="slider-wrapper icons invert card-shadow">
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Old Fashioned</p>
+          <p class="card__recipe">Whiskey, Bitters</p>
         <p class="card__formula">
           2 oz Whiskey
           0.25 oz Simple
           2 dash Ango
         </p>
-      </div>
+        </div>
 
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Amaretto Sour</p>
-        <p class="card__recipe">Whiskey, Lemon, Almond, Bitters</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Amaretto Sour</p>
+          <p class="card__recipe">Whiskey, Lemon, Almond, Bitters</p>
+          <p class="card__formula">
           1.5 oz Whiskey
           1 oz Lemon
           1 oz Orgeat
           1 dash Ango
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Bubblegum</p>
-        <p class="card__recipe">Whiskey, Hibiscus, Rose, Bitters</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Bubblegum</p>
+          <p class="card__recipe">Whiskey, Hibiscus, Rose, Bitters</p>
+          <p class="card__formula">
           2 oz Whiskey
           0.75 oz Hibiscus & Rose Syrup
           2 dash Ango
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Whiskey Sour</p>
-        <p class="card__recipe">Whiskey, Lemon, Bitters</p>
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Whiskey Sour</p>
+          <p class="card__recipe">Whiskey, Lemon, Bitters</p>
         <p class="card__formula">
           2:1:1
           Egg white
         </p>
-      </div>
+        </div>
 
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Mint Julep</p>
-        <p class="card__recipe">Whiskey, Mint, Bitters</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Mint Julep</p>
+          <p class="card__recipe">Whiskey, Mint, Bitters</p>
+          <p class="card__formula">
           3 oz Whiskey
           0.5 oz Simple
           Mint
           2 dash Ango
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Trinidad Sour</p>
-        <p class="card__recipe">Whiskey, Bitters, Lemon, Almond</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Trinidad Sour</p>
+          <p class="card__recipe">Whiskey, Bitters, Lemon, Almond</p>
+          <p class="card__formula">
           0.5 oz Whiskey
           1 oz Orgeat
           0.75 oz Lemon
           1 oz Ango
           Egg white
-        </p>
-      </div>
+          </p>
+        </div>
 
-      <div class="card">
-        <img src="img/rocks.webp" class="card__image">
-        <p class="card__name">Boulevardier</p>
-        <p class="card__recipe">Whiskey, Sweet vermouth, Campari</p>
+        <div class="card">
+          <img src="img/rocks.webp" class="card__image" />
+          <p class="card__name">Boulevardier</p>
+          <p class="card__recipe">Whiskey, Sweet vermouth, Campari</p>
         <p class="card__formula">
           1.5:1:1
         </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section id="0" class="menu-slider">
+      <p class="subtitle center">- No less delicious</p>
+      <h1 class="center text-shadow neon-on-load">Alco-free</h1>
+      <p class="description center"></p>
 
+      <div class="slider-wrapper icons invert card-shadow vertical center">
+        <div class="card">
+          <img src="img/mug.webp" class="card__image" />
+          <p class="card__name">Coffee, Matcha, Tea, Cocoa, Smoothie</p>
+        </div>
 
-
-
-
-
-  <!-- <section id="s" class="menu-slider">
-    <p class="subtitle center">- You have to be a really important guest</p>
-
-    <h1 class="center text-shadow neon-on-load">
-      Specials
-    </h1>
-
-    <p class="description center"></p> -->
-
-    <!-- Add the class "vertical" to the div below to switch to a stacked layout. -->
-    <!-- <div class="slider-wrapper icons invert card-shadow vertical center">
-
-      <div class="card">
-        <img src="img/beer.webp" class="card__image">
-        <p class="card__name">1588 Butter Beer</p>
-        <p class="card__recipe">Ale, Butter, Ginger, Nutmeg, Clove</p>
-        <p class="card__formula">
-          In pan
-          1.5 L Ale
-          0.5 tsp Ginger, Nutmeg, Cloves
-          Heat to low simmer
-
-          In separate bowl
-          1 cup/225 g Demerara sugar
-          5 egg yolks
-
-          Combine
-
-          Melt in 100 g Butter
-        </p>
-      </div>
-
-    </div>
-  </section> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <section id="0" class="menu-slider">
-    <p class="subtitle center">- No less delicious</p>
-
-    <h1 class="center text-shadow neon-on-load">
-      Alco-free
-    </h1>
-
-    <p class="description center"></p>
-
-    <!-- Add the class "vertical" to the div below to switch to a stacked layout. -->
-    <div class="slider-wrapper icons invert card-shadow vertical center">
-
-      <div class="card">
-        <img src="img/mug.webp" class="card__image">
-        <p class="card__name">Coffee, Matcha, Tea, Cocoa, Smoothie</p>
-      </div>
-
-      <div class="card">
-        <img src="img/coupe.webp" class="card__image">
-        <p class="card__name">Shakerato with Milk</p>
-        <p class="card__recipe">Espresso, Milk</p>
-        <p class="card__formula">
+        <div class="card">
+          <img src="img/coupe.webp" class="card__image" />
+          <p class="card__name">Shakerato with Milk</p>
+          <p class="card__recipe">Espresso, Milk</p>
+          <p class="card__formula">
           1.5 oz Espresso
           3 oz Whole milk
           0.5 oz Simple
           2 drops Saline
-        </p>
-        <span class="palette">0%</span>
-      </div>
-
-    </div>
-  </section>
-
-
-
-  <!-- sugared booze:
-
-    212 grams fine sugar
-    1 liter alco -->
-
-
-  <!-- <div class="card">
-					<img src="img/old-fashioned-glass.png" class="card__image">
-					<p class="card__name">Brandy Peach B*tch</p>
-					<p class="card__recipe">Brandy, Lemon juice, Peach juice, Orgeat, Bitters</p>
-					<p class="card__formula">
-            1.5 oz Brandy 
-            2 oz Peach juice
-            1 oz Lemon juice
-            0.5 oz Orgeat
-            0.5 oz Amaro di Angostura 
-            0.25 oz Simple
           </p>
-				</div> -->
-
-
-
-
-  <!-- those weren't great
-    <div class="card">
-      <img src="img/rocks.webp" class="card__image">
-      <p class="card__name">Junglebird</p>
-      <p class="card__recipe">Rum, Campari, Pineapple, Lime, Orgeat</p>
-      <p class="card__formula">
-        1.5 oz Rum
-        0.75 oz Campari
-        1.5 oz Pineapple
-        0.5 oz Lime
-        0.5 oz Simple
-      </p>
-    </div>
-  -->
-
-
-</body>
-
+          <span class="palette">0%</span>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
