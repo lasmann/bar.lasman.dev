@@ -191,6 +191,7 @@ nav a {
   text-wrap-mode: nowrap;
   padding: 0 15px;
   text-decoration: none;
+  transition: all 0.15s ease;
 }
 
 nav a.active {
@@ -337,18 +338,23 @@ section:last-child {
 }
 
 .slider-wrapper .card {
-	scroll-snap-align: start;
-
-	display: flex;
-	flex-direction: column;
   text-align: center;
   justify-content: center;
   align-items: center;
+	scroll-snap-align: start;
+	display: flex;
+	flex-direction: column;
 	width: 250px;
 	min-width: 250px;
   height: auto;
-
   background: var(--card-bg-color);
+}
+
+@media screen and (max-width: 1024px) {
+  .slider-wrapper:not(.vertical) .card {
+    text-align: left;
+    align-items: start;
+  }
 }
 
 .slider-wrapper .card p {
