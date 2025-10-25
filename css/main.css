@@ -222,11 +222,11 @@ section {
   background: var(--section-bg-color);
 }
 
-section:first-child {
+section:first-of-type {
 	padding-top: 6rem;
 }
 
-section:last-child {
+section:last-of-type {
 	padding-bottom: 8rem;
 }
 
@@ -237,11 +237,11 @@ section:last-child {
   margin: 4rem 2rem;
 }
 
-.bordered section:first-child {
+.bordered section:first-of-type {
 	padding-top: 4rem;
 }
 
-.bordered section:last-child {
+.bordered section:last-of-type {
 	padding-bottom: 4rem;
 }
 
